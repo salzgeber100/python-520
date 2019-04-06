@@ -142,8 +142,7 @@ lista_de_usuarios = [
 ]
 
 for usuario in lista_de_usuarios:
-    print('Nome: ' + usuario['nome'])
-    print('Idade: ' + usuario['idade'])
-    if usuario['sexo'] == 'M' and usuario['idade'] > 30:
-        print('É do sexo do masculino')
-    print('\n\n ')
+    if usuario['idade'] > 30:
+        print(usuario['nome'])
+    else:
+        print('Menor do que 30 anos')

@@ -1,4 +1,3 @@
-# Exercício 3
 lista_de_usuarios = [
   {
     "nome": "qMHHOwoAaYECgB",
@@ -142,15 +141,24 @@ lista_de_usuarios = [
   }
 ]
 
-##############################################################
-# NOME (20)         # IDADE (5) # ENDERECO (50) # SEXO (2) # EMAIL (30)
+lista_de_usuarios_filtrados = []
+
+for usuario in lista_de_usuarios:
+    
+    cond_1 = 'j' in usuario['email'].lower()
+    cond_2 = 'l' in usuario['email'].lower()
+    cond_3 = usuario['idade'] > 25
+
+    if cond_1 or cond_2:
+        if cond_3:
+            lista_de_usuarios_filtrados.append(usuario)
 
 TEMPLATE = '{};{};{};{};{};'
 
 CABECALHO = TEMPLATE.format('NOME', 'IDADE', 'ENDEREÇO', 'SEXO', 'EMAIL')
 
 print(CABECALHO)
-for usuario in lista_de_usuarios:
+for usuario in lista_de_usuarios_filtrados:
     usuario_formatado = TEMPLATE.format(
         usuario['nome'],
         usuario['idade'],
@@ -159,3 +167,5 @@ for usuario in lista_de_usuarios:
         usuario['email'],
     )
     print(usuario_formatado)
+    
+#Letras buscadas j OU l E idade > 25
