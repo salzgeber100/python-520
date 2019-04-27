@@ -1,6 +1,5 @@
 
 import users
-import roles
 
 def cadastrar_usuario():
 
@@ -31,7 +30,7 @@ def adicionar_role():
     user.save()
 
     print('Role adicionada com sucesso')
-    
+
 done = False
 while not done:
 

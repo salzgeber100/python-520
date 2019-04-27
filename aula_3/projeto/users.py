@@ -6,6 +6,13 @@ db = client.projeto
 
 class User:
 
+    @staticmethod
+    def find_by_email(email):
+        u = db.users.find_one({ 'email': email })
+        if not u:
+            return None
+        return User(u['name'], u['email'], u['age'], u['roles'])
+
     def __init__(self, name, email, age, roles = []):
         self.name = name
         self.email = email
